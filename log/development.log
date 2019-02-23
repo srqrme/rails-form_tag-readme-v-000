@@ -587,3 +587,27 @@ ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticit
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (12.1ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (50.0ms)
+
+
+Started GET "/posts/new" for 69.115.102.3 at 2019-02-23 19:24:15 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 307ms (Views: 289.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 69.115.102.3 at 2019-02-23 19:24:26 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"My post title", "description"=>"My post description"}, "authenticity_token"=>"NNCMSEGTkUa7z3uuckNBVaVdudvnxtPD598mBXHYHBgDdk0mwWU+PMi5ntCT2rQT0LKTyqzLVSHoVaCtgQatvQ=="}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "My post title"], ["description", "My post description"], ["created_at", "2019-02-23 19:24:26.309853"], ["updated_at", "2019-02-23 19:24:26.309853"]]
+  [1m[35m (62.9ms)[0m  commit transaction
+Redirected to http://67.205.182.198:40736/posts
+Completed 302 Found in 75ms (ActiveRecord: 64.1ms)
+
+
+Started GET "/posts" for 69.115.102.3 at 2019-02-23 19:24:26 +0000
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.3ms)
