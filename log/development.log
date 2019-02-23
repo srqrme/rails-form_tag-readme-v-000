@@ -302,3 +302,6 @@ Processing by PostsController#index as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
   Rendered posts/index.html.erb within layouts/application (3.8ms)
 Completed 200 OK in 292ms (Views: 278.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts?post%5Btitle%5D=&post%5Bdescription%5D=" for 69.115.102.3 at 2019-02-23 19:12:27 +0000
